@@ -14,6 +14,11 @@ gcloud config set project "${PROJECTID}"
  elif [[ $PROJECTID == *"prod"* ]]; then
     ENV=p
  fi
+ 
+ withCredentials([file(credentialsId: 'gcloud-vmlist', variable: 'GCLOUD_VMLIST')]) {
+              sh '''
+                 gcloud auth activate-service-account --key-file="$GCLOUD_VMLIST"
+              '''
 
 gcloud compute instance-groups managed resize gce-eu-west2-"${ENV}"-"${APP}"-mig --size=0 --region europe-west2
 
