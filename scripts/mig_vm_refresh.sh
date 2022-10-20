@@ -19,7 +19,7 @@ gcloud config set project "${PROJECTID}"
               sh '''
                  gcloud auth activate-service-account --key-file="$GCLOUD_VMLIST"
               '''
-
+}
 gcloud compute instance-groups managed resize gce-eu-west2-"${ENV}"-"${APP}"-mig --size=0 --region europe-west2
 
 sleep 1m
