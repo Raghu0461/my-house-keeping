@@ -5,6 +5,9 @@ set -e
 APP=$1
 PROJECTID=$2
 APPROVED=$3
+environment {
+        $PROJECTID='gcp-practice-366106'
+    }
 
 withCredentials([file(credentialsId: 'gcloud-vmlist', variable: 'GCLOUD_VMLIST')]) {
               sh 'gcloud auth activate-service-account --key-file="$GCLOUD_VMLIST'
