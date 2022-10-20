@@ -9,7 +9,7 @@ APPROVED=$3
 if [[ "$APPROVED" == true ]]; then
 gcloud config set project "${PROJECTID}"
 
- if [[ $PROJECTID == *"dev"* ]]; then
+ if [[ $PROJECTID == *"gcp"* ]]; then
     ENV=d
  elif [[ $PROJECTID == *"prod"* ]]; then
     ENV=p
