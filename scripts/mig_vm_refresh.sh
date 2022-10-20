@@ -7,9 +7,7 @@ PROJECTID=$2
 APPROVED=$3
 
 withCredentials([file(credentialsId: 'gcloud-vmlist', variable: 'GCLOUD_VMLIST')]) {
-              sh '''
-                 gcloud auth activate-service-account --key-file="$GCLOUD_VMLIST"
-              '''
+              sh 'gcloud auth activate-service-account --key-file="$GCLOUD_VMLIST'
 }
 
 if [[ "$APPROVED" == true ]]; then
