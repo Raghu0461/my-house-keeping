@@ -24,6 +24,6 @@ gcloud compute instance-groups managed resize gce-eu-west2-"${ENV}"-"${APP}"-mig
 elif [[ "$APPROVED" == false ]]; then
   echo "forgot to tick the box"
 fi
-
+echo "this is raghu"
 echo "this is me"
 echo "This is code"
